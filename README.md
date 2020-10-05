@@ -10,11 +10,11 @@ c. Doing the above with move semantics when filling with random strings
 
 Methodology:
 I created 5 classes to break up the problem. 
- > A class for an array of random integers
- > A class for a vector of random integers
- > A class for an array of random strings
- > A class for a vector of random strings
- > And finally a class that takes random integer/string arrays and random integer/string vectors
+ - A class for an array of random integers
+ - A class for a vector of random integers
+ - A class for an array of random strings
+ - A class for a vector of random strings
+ - And finally a class that takes random integer/string arrays and random integer/string vectors
  and times how it take to fill them and cout's the results.
 
 Reasoning: I felt that seperating the problem into classes would reduce the cluter in main.cpp,
