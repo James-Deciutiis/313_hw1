@@ -18,7 +18,7 @@ I created 5 classes to break up the problem.
  and times how it take to fill them and cout's the results.
 
 Reasoning: I felt that seperating the problem into classes would reduce the cluter in main.cpp,
-improve readability, and help set myself up fro the final part of the question which was to 
+improve readability, and help set myself up for the final part of the question which was to 
 fill up a random string array and random string vector using move semantics (I used the classes operator= for this)
 
 
