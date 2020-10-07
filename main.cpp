@@ -8,7 +8,7 @@ int main(){
 	
 	//parameter for TimeTrial is for the amount of trials it will do
 	//final results are the average times taken over all trials
-	TimeTrial trial(10);
+	TimeTrial trial(3);
 	
 	RandomIntArray ary(10000);
 	RandomIntVector vect(10000);

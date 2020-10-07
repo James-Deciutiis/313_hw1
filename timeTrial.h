@@ -18,9 +18,10 @@ public:
 	//default constructor
 	TimeTrial(){_trials = 10; cout<<"initialized with default constructor"<<endl;}
 	//parameter contructor
-	TimeTrial(int t) : _trials(t){cout<<"initialized with parameters"<<endl;}
+	TimeTrial(int t) : _trials(t){}
 	
 	void partA(RandomIntArray a, RandomIntVector v){
+		cout<<"<--------------------- PART A: ----------------------->"<<endl;
 		cout<<"Filling array with " << a.getSize() << " random numbers"<<endl;
 		auto start = chrono::steady_clock::now();
 		for(int i = 0; i <_trials; i++){
@@ -30,7 +31,7 @@ public:
 		}
 		auto end = chrono::steady_clock::now();
 		auto elapsed = std::chrono::duration_cast<std::chrono::milliseconds>(end - start)/_trials;
-		cout << "It took " << elapsed.count() << " milliseconds." << endl;
+		cout << "It took on average " << elapsed.count() << " milliseconds. over " << _trials << " trials" << endl;
 		
 		
 		cout<<"Filling vector with " << v.getSize() << " random numbers"<<endl;
@@ -42,11 +43,11 @@ public:
 		}
 		end = chrono::steady_clock::now();
 		elapsed = std::chrono::duration_cast<std::chrono::milliseconds>(end - start)/_trials;
-		cout << "It took " << elapsed.count() << " milliseconds." << endl;
+		cout << "It took on average " << elapsed.count() << " milliseconds. over " << _trials << " trials" << endl;
 	}
 
-	void partB(RandomStringArray a, RandomStringVector v){
-		
+	void partB(RandomStringArray a, RandomStringVector v){	
+		cout<<"<--------------------- PART B: ----------------------->"<<endl;
 		cout<<"Filling array with " << a.getSize() << " random strings"<<endl;
 		auto start = chrono::steady_clock::now();
 		for(int i = 0; i <_trials; i++){
@@ -56,7 +57,7 @@ public:
 		}
 		auto end = chrono::steady_clock::now();
 		auto elapsed = std::chrono::duration_cast<std::chrono::milliseconds>(end - start)/_trials;
-		cout << "It took " << elapsed.count() << " milliseconds." << endl;
+		cout << "It took on average " << elapsed.count() << " milliseconds. over " << _trials << " trials" << endl;
 		
 		
 		cout<<"Filling vector with " << a.getSize() << " random strings"<<endl;
@@ -68,15 +69,16 @@ public:
 		}
 		end = chrono::steady_clock::now();
 		elapsed = std::chrono::duration_cast<std::chrono::milliseconds>(end - start)/_trials;
-		cout << "It took " << elapsed.count() << " milliseconds." << endl;
+		cout << "It took on average " << elapsed.count() << " milliseconds. over " << _trials << " trials" << endl;
 	}
 
 	void partC(RandomStringArray a, RandomStringVector v){
-		
+		cout<<"<--------------------- PART C: ----------------------->"<<endl;
 		cout<<"Filling array with " << a.getSize() << " random strings using move semantics"<<endl;
 		a.fillArray();
 		auto start = chrono::steady_clock::now();
-		RandomStringArray b = a;
+		RandomStringArray b(a.getSize());
+		b = a;
 		auto end = chrono::steady_clock::now();
 		auto elapsed = std::chrono::duration_cast<std::chrono::microseconds>(end - start);
 		cout << "It took " << elapsed.count() << " microseconds." << endl;
@@ -84,7 +86,8 @@ public:
 		cout<<"Filling vector with " << v.getSize() << " random strings using move semantics"<<endl;
 		v.fillVector();
 		start = chrono::steady_clock::now();
-		RandomStringVector w = v;
+		RandomStringVector w(v.getSize());
+		w = v;
 		end = chrono::steady_clock::now();
 		elapsed = std::chrono::duration_cast<std::chrono::microseconds>(end - start);
 		cout << "It took " << elapsed.count() << " microseconds." << endl;

@@ -10,7 +10,7 @@ private:
 	vector<int> _vector;
 public:
 	RandomIntVector(){SIZE = 5000, _vector = vector<int>(SIZE); cout<<"initialized with default constructor"<<endl;}
-	RandomIntVector(int s) : SIZE(s), _vector(vector<int>(SIZE)) {cout<<"initialized with parameters"<<endl;}
+	RandomIntVector(int s) : SIZE(s), _vector(vector<int>(SIZE)) {}
 	
 	//destructor
 	~RandomIntVector(){ _vector.clear(); }
@@ -37,6 +37,7 @@ public:
 	RandomIntVector& operator=(RandomIntVector &rhs) noexcept
 	{
 		if(this != &rhs){
+			cout<< "in operator= "<< endl;
 			_vector.clear();
 			_vector = rhs._vector;
 			SIZE = rhs.SIZE;

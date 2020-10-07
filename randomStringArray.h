@@ -11,7 +11,7 @@ public:
 	//default constructor
 	RandomStringArray(){SIZE = 5000, array = new string[5000]; cout<<"Initialized with default constructor"<<endl;}
 	//parameter constuctor
-	RandomStringArray(int S) : SIZE(S), array(new string[S]){cout<<"Initialized with parameters"<<endl;}
+	RandomStringArray(int S) : SIZE(S), array(new string[S]){}
 	
 	//destructor
 	~RandomStringArray(){delete []array;}
@@ -38,6 +38,7 @@ public:
 	//operator=
 	RandomStringArray& operator=(RandomStringArray& rhs) noexcept
 	{
+		cout<< "in operator= "<< endl;
 		if(this != &rhs){
 			delete array;
 			array = rhs.array;

@@ -10,7 +10,7 @@ private:
 	vector<string> _vector;
 public:
 	RandomStringVector(){SIZE = 5000, _vector = vector<string>(SIZE); cout<<"initialized with default constructor"<<endl;}
-	RandomStringVector(int s) : SIZE(s), _vector(vector<string>(SIZE)) {cout<<"initialized with parameters"<<endl;}
+	RandomStringVector(int s) : SIZE(s), _vector(vector<string>(SIZE)) {}
 	
 	//destructor
 	~RandomStringVector(){ _vector.clear(); }
@@ -36,6 +36,7 @@ public:
 	//operator=
 	RandomStringVector& operator=(RandomStringVector &rhs) noexcept
 	{
+		cout<< "in operator= "<< endl;
 		if(this != &rhs){
 			_vector.clear();
 			_vector = rhs._vector;
