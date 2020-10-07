@@ -43,5 +43,13 @@ At first when looking for a way to time how long each operation would take, I th
 
 For parts a, and b I was fine using milliseconds to measure how long each trial took. But for the move semantics part I needed to use microseconds since the operations were so quick that it couldn't be measured properly. 
 
+The timeTrial class takes in an int parameter for the amount of trials to do on parts a and b by default this is set to 3 trials.
+
+## Compile 
+
+```
+g++ main.cpp -std=c++11 -o <desired_name_of_output>
+```
+
 ## Closing thoughts
-I think this question really demonstrated the power of using move semantics to populate new arrays and vectors over making a copy of them. The time difference was very significant 
+I think this question really demonstrated the power of using move semantics to populate new arrays and vectors over making a copy of them. The time difference was very significant and, to me, is absolutely worth setting up the operator=/move constructor.
