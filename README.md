@@ -29,7 +29,7 @@ For the random integer array/vector I filled them using the standard rand functi
 <br>
 Strings:
 <br>
-For the random string array/vectors I filled them using a modified version of the rand fuction.
+For the random string array/vectors I filled them using a modified version of the rand function.
 I assumed that the only ascii values to be desired were values of the english alphabet, capitalizations included. So I created a method called randAscii that would return the string "a" plus a random value from 0-94 (which guarantees we get a desired character).
 
 ```c++
